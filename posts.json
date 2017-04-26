@@ -1,0 +1,21 @@
+{
+  "posts" : [{
+    "title" : "I ROck Face",
+    "imgURL" : "http://i.imgur.com/1cdd1ie.png",
+    "body" : "AND THAT'S A ROCK FACT",
+    "userID" : "bBJT3sZ4o0Rq1YYiZpnRwLnJweY2",
+    "timestamp" : "2017-04-26T12:25:43.511Z"
+    }, {
+    "title" : "Another Post From Hell",
+    "imgURL" : "",
+    "body" : "It's getting really hot down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here down here...",
+    "userID" : "bBJT3sZ4o0Rq1YYiZpnRwLnJweY2",
+    "timestamp" : "2017-04-01T12:00:43.511Z"
+    }, {
+    "title" : "Let's go to the place and do the thing",
+    "imgURL" : "https://www.sideshowtoy.com/assets/products/300415-dawg/lg/300415-dawg-004.jpg",
+    "body" : "DAWG",
+    "userID" : "bBJT3sZ4o0Rq1YYiZpnRwLnJweY2",
+    "timestamp" : "2017-03-26T12:25:43.511Z"
+  }]
+}

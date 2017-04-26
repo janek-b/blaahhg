@@ -25,6 +25,10 @@ You will need the following things properly installed on your computer.
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
+* authentication implemented by following this guide https://www.danielgynn.com/third-party-auth-in-ember-with-firebase/
+
+* firebase config settings located inside .env file
+
 ### Code Generators
 
 Make use of the many generators for code, try `ember help generate` for more details
