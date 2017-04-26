@@ -17,5 +17,10 @@
     "body" : "DAWG",
     "userID" : "bBJT3sZ4o0Rq1YYiZpnRwLnJweY2",
     "timestamp" : "2017-03-26T12:25:43.511Z"
-  }]
+  }],
+  "users": [{
+    "name": "Dallas",
+    "userID": "bBJT3sZ4o0Rq1YYiZpnRwLnJweY2",
+    "photoURL": "http://i.imgur.com/1cdd1ie.png"
+    }]
 }
