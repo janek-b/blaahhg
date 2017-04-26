@@ -1,6 +1,5 @@
-
-<ul>
+<div class="layout-column layout-align-space-around-center">
   {{#each model as |post|}}
-    <li>{{post.title}}</li>
+    {{post-tile post=post}}
   {{/each}}
-</ul>
+</div>
