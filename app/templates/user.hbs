@@ -1,5 +1,19 @@
+<div class="layout-row layout-align-end-start">
+<div class="flex-20">
+
+</div>
+<div class="flex-60">
 <div class="layout-column layout-align-space-around-center">
   {{#each model.posts as |post|}}
-    {{post-tile post=post}}
+    {{post-tile post=post userid=session.currentUser.uid currentUser=session.currentUser saveComment='saveComment'}}
   {{/each}}
+</div>
+</div>
+<div class="flex userStatsCard">
+
+<div class="layout-column layout-align-center-end">
+
+{{user-stats user=model}}
+</div>
+</div>
 </div>

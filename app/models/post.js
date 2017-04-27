@@ -5,5 +5,6 @@ export default DS.Model.extend({
   imgURL: DS.attr(),
   body: DS.attr(),
   timestamp: DS.attr(),
-  user: DS.belongsTo('user', {async: true})
+  user: DS.belongsTo('user', {async: true}),
+  comments: DS.hasMany('comment', {async: true})
 });

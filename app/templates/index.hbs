@@ -1,5 +1,5 @@
 <div class="layout-column layout-align-space-around-center">
   {{#each model as |post|}}
-    {{post-tile post=post}}
+    {{post-tile post=post userid=session.currentUser.uid currentUser=session.currentUser saveComment='saveComment'}}
   {{/each}}
 </div>

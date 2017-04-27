@@ -1,0 +1,12 @@
+{{#paper-card as |card|}}
+  {{#card.header as |header|}}
+
+    {{#header.text as |text|}}
+      {{#text.title}}{{user.name}}{{/text.title}}
+    {{/header.text}}
+  {{/card.header}}
+  {{card.image src=user.photoURL alt=user.name title=user.name}}
+  {{#card.content}}
+    Number of posts: {{user.posts.length}}
+  {{/card.content}}
+{{/paper-card}}
