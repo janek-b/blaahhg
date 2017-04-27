@@ -1,19 +1,17 @@
-<div class="layout-row layout-align-end-start">
-<div class="flex-20">
+<div class="layout-row layout-wrap layout-align-space-around-start all-cards">
+  {{!-- <div class="flex-20">
 
-</div>
-<div class="flex-60">
-<div class="layout-column layout-align-space-around-center">
-  {{#each model.posts as |post|}}
-    {{post-tile post=post userid=session.currentUser.uid session=session saveComment='saveComment' addFavorite='addFavorite' removeFavorite='removeFavorite'}}
-  {{/each}}
-</div>
-</div>
-<div class="flex userStatsCard">
-
-<div class="layout-column layout-align-center-end">
-
-{{user-stats user=model}}
-</div>
-</div>
+  </div> --}}
+  <div class="flex-60 flex-auto">
+    {{!-- <div class="layout-column layout-align-space-around-center"> --}}
+      {{#each model.posts as |post|}}
+        {{post-tile post=post userid=session.currentUser.uid session=session saveComment='saveComment' addFavorite='addFavorite' removeFavorite='removeFavorite'}}
+      {{/each}}
+    {{!-- </div> --}}
+  </div>
+  <div class="flex-20 flex-none userStatsCard">
+    {{!-- <div class="layout-column layout-align-center-end"> --}}
+      {{user-stats user=model}}
+    {{!-- </div> --}}
+  </div>
 </div>

@@ -7,6 +7,7 @@
   {{/card.header}}
   {{card.image src=user.photoURL alt=user.name title=user.name}}
   {{#card.content}}
-    Number of posts: {{user.posts.length}}
+    <p>Number of posts: <strong>{{user.posts.length}}</strong></p>
+    <p>Number of comments: <strong>{{user.comments.length}}</strong></p>
   {{/card.content}}
 {{/paper-card}}

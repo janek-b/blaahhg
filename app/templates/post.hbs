@@ -1,5 +1,5 @@
 <div class="layout-column">
   <div class="layout-row layout-align-space-around-center">
-    {{post-detail post=model}}
+    {{post-detail post=model userid=session.currentUser.uid session=session saveComment='saveComment' addFavorite='addFavorite' removeFavorite='removeFavorite'}}
   </div>
 </div>

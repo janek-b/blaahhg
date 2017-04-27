@@ -1,4 +1,4 @@
-<div class="layout-column layout-align-space-around-center">
+<div class="layout-column layout-align-space-around-center all-cards">
   {{#each model as |post|}}
     {{post-tile post=post userid=session.currentUser.uid session=session saveComment='saveComment' addFavorite='addFavorite' removeFavorite='removeFavorite'}}
   {{/each}}

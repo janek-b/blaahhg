@@ -7,7 +7,7 @@
       {{/title.text}}
     {{/card.title}}
     {{#if post.imgURL}}
-      {{card.image size="md" src=post.imgURL alt=post.title title="Tomster"}}
+      {{card.image size="md" src=post.imgURL alt=post.title title=post.title}}
     {{/if}}
     {{#card.content class="layout-row layout-align-space-between"}}
       {{#card.media}}

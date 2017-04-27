@@ -4,7 +4,6 @@ export default Ember.Component.extend({
   getUser: Ember.inject.service('get-user'),
   actions: {
     savePost() {
-      var timestamp = (new Date()).toJSON();
       var user = this.get('getUser').getUser(this.get('userid'));
       user.then(result => {
         var params = {
