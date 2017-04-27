@@ -10,3 +10,273 @@
   width: 80vw;
   text-align: center;
 }
+
+$accent-color: #e24b31;
+$text-color: #e2e2e2;
+
+html,
+body,
+body > .ember-view {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #2e3642;
+  font-weight: 300;
+  color: $text-color;
+}
+
+h1, h2, h3, h4, h5, label {
+  font-weight: 300;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: darken($accent-color, 5);
+  }
+
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.ember-burger-menu {
+  .bm-outlet > .bm-content {
+    background: #1d2837;
+  }
+
+  .bm-menu {
+    background: $accent-color;
+
+    a.close {
+      position: absolute;
+      top: 0;
+      padding: 10px;
+
+      &.left {
+        right: 0;
+      }
+
+      &.right {
+        left: 0;
+      }
+    }
+
+    h2 {
+      margin: 0;
+      padding: 1em;
+      color: rgba(0,0,0,0.4);
+      text-shadow: 0 0 1px rgba(0,0,0,0.1);
+      font-size: 2em;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'Bungee Hairline', cursive;
+      font-weight: bold;
+
+      > i {
+        padding-right: 10px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          display: block;
+          padding: 1em 1em 1em 1.2em;
+          outline: none;
+          border-bottom: 1px solid rgba(0,0,0,0.2);
+          color: $text-color;
+          text-transform: uppercase;
+          text-shadow: 0 0 1px rgba(255,255,255,0.1);
+          letter-spacing: 1px;
+          -webkit-transition: background 0.3s;
+          transition: background 0.3s;
+          cursor: pointer;
+
+          > i {
+            margin-right: 20px;
+            font-size: 20px;
+
+            &:before {
+              vertical-align: middle;
+            }
+          }
+
+          &:hover {
+            background: #ad4636;
+          }
+        }
+
+
+        &:first-child a {
+          border-top: 1px solid rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
+}
+
+.btn-outline {
+  border-color: $accent-color;
+  box-shadow: none;
+  color: $text-color;
+  font-weight: 300;
+  background: transparent;
+
+  &:hover, &:focus, &:active, &:active:focus, &.active, &.active:hover, &.active:focus {
+    z-index: 0;
+    outline: 0;
+    box-shadow: none;
+    background: $accent-color;
+    color: $text-color;
+    border-color: darken($accent-color, 5);
+  }
+}
+
+.btn-group > .btn.active {
+  z-index: 0;
+}
+
+.hamburger {
+  position: fixed;
+  top: 0;
+  padding: 10px 20px;
+  z-index: 100;
+  font-size: 30px;
+  color: $text-color;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+
+  &.burger-hidden {
+    opacity: 0;
+  }
+
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+
+  &:hover, &:focus, &:active {
+    color: #ccc;
+  }
+}
+
+.tomster {
+  position: absolute;
+  bottom: 0;
+
+  &.left {
+    left: 50px;
+  }
+
+  &.right {
+    right: 50px;
+  }
+}
+
+main {
+  height: 100%;
+
+  .header {
+    background: #233040;
+    padding: 10px;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    img {
+      width: 375px;
+      max-width: 80%;
+    }
+
+    h1 {
+      font-family: 'Bungee Hairline', cursive;
+      font-weight: bold;
+    }
+
+    .description {
+      padding: 30px 0 30px;
+      font-size: 16px;
+
+      > p {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .content {
+    height: 50%;
+
+    .container {
+      padding-top: 30px;
+
+      h4 {
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      .animations {
+        min-height: 310px;
+        border-right: 1px solid #ccc;
+        padding-right: 25px;
+
+        .btn-outline {
+          margin: 0 0 10px 10px;
+        }
+      }
+
+      .options {
+        min-height: 310px;
+        padding-left: 25px;
+
+        .option {
+          label {
+            font-size: 15px;
+            width: 160px;
+          }
+          .checkbox {
+            cursor: pointer;
+            display: inline-block;
+            color: $accent-color;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .inspiration {
+      padding: 40px 0;
+    }
+  }
+}
