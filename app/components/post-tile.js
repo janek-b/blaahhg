@@ -18,7 +18,27 @@ export default Ember.Component.extend({
         };
         this.sendAction('saveComment', params);
       });
-    }
+    },
+    addFavorite: function() {
+      var user = this.get('getUser').getUser(this.get('userid'));
+      user.then(result => {
+        var params = {
+          post: this.get('post'),
+          user: result
+        };
+        this.sendAction('addFavorite', params);
+      })
+    },
+    removeFavorite: function() {
+      var user = this.get('getUser').getUser(this.get('userid'));
+      user.then(result => {
+        var params = {
+          post: this.get('post'),
+          user: result
+        };
+        this.sendAction('removeFavorite', params);
+      })
+    },
   }
 
 

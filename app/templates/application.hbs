@@ -2,9 +2,11 @@
 
 {{#burger-menu
   translucentOverlay=translucentOverlay
-  dismissOnClick=dismissOnClick
-  dismissOnEsc=dismissOnEsc
-  gesturesEnabled=gesturesEnabled
+  dismissOnClick="dismissOnClick"
+  dismissOnEsc="dismissOnEsc"
+  gesturesEnabled="gesturesEnabled"
+  animation="slide-shrink"
+  itemAnimation="push"
   as |burger|}}
   {{#burger.menu dismissOnItemClick=true itemTagName="li" as |menu|}}
     <a {{action burger.state.actions.close}} class="close {{burger.state.position}} fa fa-times"></a>
@@ -46,6 +48,6 @@
         {{/paper-button}}
       {{/paper-toolbar-tools}}
     {{/paper-toolbar}}
-    {{outlet}}
+    {{liquid-outlet}}
   {{/burger.outlet}}
 {{/burger-menu}}

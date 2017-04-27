@@ -1,6 +1,7 @@
 <div class="layout-row layout-align-space-around-center">
   <div class="new-post-container flex-80">
-    {{new-post userid=session.currentUser.uid currentUser=session.currentUser savePost='savePost'}}
-
+    {{#if session.isAuthenticated}}
+      {{new-post userid=session.currentUser.uid currentUser=session.currentUser savePost='savePost'}}
+    {{/if}}
   </div>
 </div>

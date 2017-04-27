@@ -6,7 +6,9 @@
         {{#text.subhead}}{{post.user.name}}{{/text.subhead}}
       {{/title.text}}
     {{/card.title}}
-    {{card.image size="md" src=post.imgURL alt=post.title title="Tomster"}}
+    {{#if post.imgURL}}
+      {{card.image size="md" src=post.imgURL alt=post.title title="Tomster"}}
+    {{/if}}
     {{#card.content class="layout-row layout-align-space-between"}}
       {{#card.media}}
         <div class="card-media">
@@ -19,13 +21,19 @@
     {{#card.actions class="layout-row"}}
       {{#link-to 'user' post.user.id}}{{#paper-button iconButton=true}}{{paper-icon "face"}}{{/paper-button}}{{/link-to}}
       {{#if session.isAuthenticated}}
-        {{#paper-button iconButton=true}}{{paper-icon "favorite"}}{{/paper-button}}
+        {{#each post.favorite as |user|}}
+          {{#if user.userID session.currentUser.uid}}
+            {{#paper-button iconButton=true onClick=(action 'removeFavorite')}}{{paper-icon "favorite" class="iconFavorite"}}{{/paper-button}}
+          {{/if}}
+          {{else}}
+            {{#paper-button iconButton=true onClick=(action 'addFavorite')}}{{paper-icon "favorite"}}{{/paper-button}}
+        {{/each}}
         {{#paper-button iconButton=true onClick=(action 'toggleComment')}}{{paper-icon "comment"}}{{/paper-button}}
       {{/if}}
     {{/card.actions}}
   {{/paper-card}}
   {{!-- comment card below --}}
-  {{#if makeComment}}
+  {{#liquid-if makeComment class='commentSection'}}
   {{#paper-card as |card|}}
     {{#card.title as |title|}}
       {{#title.text as |text|}}
@@ -42,25 +50,20 @@
         <div class="layout-row">
           {{#form.submit-button raised=true primary=true}}Submit{{/form.submit-button}}
         </div>
-        {{!-- <div class="layout-column">
-          <div class="layout-row">
-
-          </div>
-        </div> --}}
       {{/paper-form}}
       <div class="layout-row layout-align-space-around-center">
         <div class="flex layout-column comment-card">
           {{#paper-list}}
             {{#paper-subheader}}Recent Comment{{/paper-subheader}}
             {{#each (comment-counter post.comments) as |comment|}}
-              {{paper-divider}}
-              {{#paper-item class="md-3-line md-long-text"}}
-                <img src={{comment.user.photoURL}} alt={{comment.user.name}} class="md-avatar"/>
-                <div class="md-list-item-text">
-                  <h3>{{comment.user.name}}</h3>
-                  <p style="word-break: break-all; word-wrap: break-word;">{{comment.text}}</p>
-                </div>
-              {{/paper-item}}
+                {{paper-divider}}
+                {{#paper-item class="md-3-line md-long-text"}}
+                  <img src={{comment.user.photoURL}} alt={{comment.user.name}} class="md-avatar"/>
+                  <div class="md-list-item-text">
+                    <h3>{{comment.user.name}}</h3>
+                    <p style="word-break: break-all; word-wrap: break-word;">{{comment.text}}</p>
+                  </div>
+                {{/paper-item}}
             {{else}}
               <p>This post has no comments, be the first to comment.</p>
             {{/each}}
@@ -71,5 +74,5 @@
     {{/card.content}}
   {{/paper-card}}
 
-  {{/if}}
+  {{/liquid-if}}
 </div>

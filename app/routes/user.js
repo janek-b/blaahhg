@@ -8,6 +8,12 @@ export default Ember.Route.extend({
   actions: {
     saveComment(params) {
       this.get('saveComment').saveComment(params);
-    }
+    },
+    addFavorite(params) {
+      this.get('saveComment').addFavorite(params);
+    },
+    removeFavorite(params) {
+      this.get('saveComment').removeFavorite(params);
+    },
   }
 });

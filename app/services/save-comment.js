@@ -14,5 +14,17 @@ export default Ember.Service.extend({
     }).then(function() {
       return post.save();
     })
+  },
+  addFavorite(params) {
+    var user = params.user;
+    var post = params.post;
+    post.get('favorite').addObject(user);
+    post.save();
+  },
+  removeFavorite(params) {
+    var user = params.user;
+    var post = params.post;
+    post.get('favorite').removeObject(user);
+    post.save();
   }
 });
