@@ -16,12 +16,13 @@
           Home
         {{/link-to}}
       {{/menu.item}}
-
-      {{#menu.item}}
-        {{#link-to 'newpost'}}
-          New Post
-        {{/link-to}}
-      {{/menu.item}}
+      {{#if session.isAuthenticated}}
+        {{#menu.item}}
+          {{#link-to 'newpost'}}
+            New Post
+          {{/link-to}}
+        {{/menu.item}}
+      {{/if}}
     </ul>
   {{/burger.menu}}
 

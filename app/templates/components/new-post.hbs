@@ -1,16 +1,27 @@
-{{#paper-form onSubmit=(action "savePost") as |form|}}
-  <div class="layout-row">
-    <div class="layout-column flex-50">
-      {{form.input label="Title" value=title onChange=(action (mut title)) required=true}}
-      {{form.input label="Image" value=imgURL onChange=(action (mut imgURL))}}
-    </div>
-    <div class="layout-column flex-50">
-      {{paper-input textarea=true block=true label="Body" maxlength=150 passThru=(hash rows=5 maxRows=5) value=body onChange=(action (mut body))}}
-    </div>
-  </div>
-  <div class="layout-row">
-    {{#form.submit-button raised=true primary=true}}Submit{{/form.submit-button}}
-  </div>
-{{/paper-form}}
-
-<button {{action "savePost"}}>test</button>
+{{#paper-card as |card|}}
+  {{#card.title as |title|}}
+    {{#title.text as |text|}}
+      {{#text.headline}}Submit a new post <small style="font-size: 10px">Posting as {{currentUser.displayName}}</small>{{/text.headline}}
+    {{/title.text}}
+  {{/card.title}}
+  {{#card.content}}
+    {{#paper-form onSubmit=(action "savePost") as |form|}}
+      <div class="layout-row layout-align-space-around-center">
+        <div class="flex-40 layout-column">
+          {{form.input label="Title" value=title onChange=(action (mut title)) required=true}}
+        </div>
+        <div class="flex-40 layout-column">
+          {{form.input label="Image" value=imgURL onChange=(action (mut imgURL))}}
+        </div>
+      </div>
+      <div class="layout-row layout-align-space-around-center">
+        <div class="flex-90 layout-column">
+          {{paper-input textarea=true block=true label="Body" maxlength=150 passThru=(hash rows=5 maxRows=5) value=body onChange=(action (mut body))}}
+        </div>
+      </div>
+      <div class="layout-row">
+        {{#form.submit-button raised=true primary=true}}Submit{{/form.submit-button}}
+      </div>
+    {{/paper-form}}
+  {{/card.content}}
+{{/paper-card}}

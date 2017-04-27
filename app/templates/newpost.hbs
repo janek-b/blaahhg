@@ -1,1 +1,6 @@
-{{new-post userid=session.currentUser.uid savePost='savePost'}}
+<div class="layout-row layout-align-space-around-center">
+  <div class="new-post-container flex-80">
+    {{new-post userid=session.currentUser.uid currentUser=session.currentUser savePost='savePost'}}
+
+  </div>
+</div>

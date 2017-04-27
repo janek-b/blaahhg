@@ -27,7 +27,15 @@ You will need the following things properly installed on your computer.
 
 * authentication implemented by following this guide https://www.danielgynn.com/third-party-auth-in-ember-with-firebase/
 
-* firebase config settings located inside .env file
+* firebase config settings should be located inside .env file. use the below example as a guide.
+```
+exports.firebaseConfig = {
+  apiKey: 'YOUR-FIREBASE-API-KEY',
+  authDomain: 'YOUR-FIREBASE-APP.firebaseapp.com',
+  databaseURL: 'https://YOUR-FIREBASE-APP.firebaseapp.com',
+  storageBucket: 'YOUR-FIREBASE-APP.appspot.com'
+}
+```
 * firebase database rules should be set to
 ```
 {
