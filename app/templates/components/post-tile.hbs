@@ -3,7 +3,7 @@
     {{#card.title as |title|}}
       {{#title.text as |text|}}
         {{#text.headline}}{{#link-to 'post' post.id}}{{post.title}}{{/link-to}}{{/text.headline}}
-        {{#text.subhead}}{{post.userID}}{{/text.subhead}}
+        {{#text.subhead}}{{post.user.name}}{{/text.subhead}}
       {{/title.text}}
     {{/card.title}}
     {{card.image size="md" src=post.imgURL alt=post.title title="Tomster"}}

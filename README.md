@@ -28,6 +28,18 @@ You will need the following things properly installed on your computer.
 * authentication implemented by following this guide https://www.danielgynn.com/third-party-auth-in-ember-with-firebase/
 
 * firebase config settings located inside .env file
+* firebase database rules should be set to
+```
+{
+  "rules": {
+    ".read": true,
+    ".write": "auth != null",
+    "users": {
+      ".indexOn": "userID"
+    }
+  }
+}
+```
 
 ### Code Generators
 
