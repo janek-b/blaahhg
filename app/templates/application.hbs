@@ -1,20 +1,45 @@
-{{#paper-toolbar}}
-  {{#paper-toolbar-tools}}
-    {{#paper-button iconButton=true}}
-      {{paper-icon "menu"}}
-    {{/paper-button}}
-    <h2>
-      Blahhg
-    </h2>
-    <span class="flex"></span>
-    {{#if session.isAuthenticated}}
-      <span>{{session.currentUser.displayName}} <a {{action "signOut"}} class="btn">{{fa-icon 'sign-out'}}</a></span>
-    {{else}}
-      <a {{action "signIn" "google"}} class="btn">{{fa-icon "google" size="lg"}}</a>
-    {{/if}}
-    {{#paper-button iconButton=true}}
-      {{paper-icon "more_vert"}}
-    {{/paper-button}}
-  {{/paper-toolbar-tools}}
-{{/paper-toolbar}}
-{{outlet}}
+{{#paper-sidenav-container class="inner-sidenav"}}
+
+  {{#paper-sidenav
+    class="md-whiteframe-z2"
+    name="left2"
+    open=leftSideBarOpen2
+    lockedOpen=leftSideBarLockedOpen
+    onToggle=(action (mut leftSideBarOpen))}}
+    {{#paper-toolbar as |toolbar|}}
+      {{#paper-toolbar-tools}}Menu{{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+    {{#paper-content padding=true}}
+      {{#link-to 'index'}}
+        {{#paper-button iconButton=true onClick=(action "toggle" "leftSideBarLockedOpen")}}Home{{/paper-button}}
+      {{/link-to}}
+      {{#link-to 'newpost'}}New Post{{/link-to}}
+    {{/paper-content}}
+  {{/paper-sidenav}}
+
+  {{#paper-card-content class="flex"}}
+
+  {{#paper-toolbar}}
+    {{#paper-toolbar-tools}}
+      {{#paper-button iconButton=true onClick=(action "toggle" "leftSideBarLockedOpen")}}
+        {{paper-icon "menu"}}
+      {{/paper-button}}
+      <h2>
+         Blahhg
+      </h2>
+      <span class="flex"></span>
+      {{#if session.isAuthenticated}}
+        <span>{{session.currentUser.displayName}} <a {{action "signOut"}} class="btn">{{fa-icon 'sign-out'}}</a></span>
+      {{else}}
+        <a {{action "signIn" "google"}} class="btn">{{fa-icon "google" size="lg"}}</a>
+      {{/if}}
+      {{#paper-button iconButton=true}}
+        {{paper-icon "more_vert"}}
+      {{/paper-button}}
+    {{/paper-toolbar-tools}}
+  {{/paper-toolbar}}
+  {{outlet}}
+
+  {{/paper-card-content}}
+
+{{/paper-sidenav-container}}
